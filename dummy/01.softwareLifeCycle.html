@@ -1,0 +1,341 @@
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. 소프트웨어 설계</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <strong>1. 요구사항 확인</strong>
+    <div class="paper">
+        <section>
+            <header>
+                <h2>001. 소프트웨어 생명 주기</h2>
+                <ul>
+                    <li>소프트웨어 개발 방법론의 바탕</li>
+                    <li>소프트웨어 개발 정의, 운용, 유지보수의 과정을 각 단계별로 나눈 것</li>
+                    <li>개발자는 문제유형이나 개발방법에따라 특정모형을 선택할 수 있다.</li>
+                </ul>
+            </header>
+            <article>
+                <ol>
+                    <li>
+                        <h3>폭포수모형</h3>
+                        <ul>
+                            <li>각 단계를 확실히 매듭짓고 검토, 승인 => 다음단계</li>
+                            <li>전통적인, 고전적 생명주기 모형</li>
+                            <li>선형 순차적 모형</li>
+                            <li>메뉴얼 작성 필수</li>
+                            <li>두개이상의 과정이 병행수행 되지 않음</li>
+                            <li class="process">
+                                <span>타당성검토</span>
+                                <span>계획</span>
+                                <span>요구분석</span>
+                                <span>설계</span>
+                                <span>구현</span>
+                                <span>시험</span>
+                                <span>유지보수</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>프로토타입모형(Prototype Model, 원형 모형)</h3>
+                        <ul>
+                            <li>견본을 만들어 결과물 예측</li>
+                            <li>사용자와 시스템사이의 <b>인터페이스에 중점을</b> 두어 개발</li>
+                            <li>구현단계에서의 <b>골격코드</b></li>
+                            <li>폭포수의 단점보완</li>
+                            <li class="process">
+                                <span>요구수집</span>
+                                <span>빠른설계</span>
+                                <span>프로토타입구축</span>
+                                <span>고객평가</span>
+                                <span>프로토타입 조정</span>
+                                <span>구현</span>
+                                <span class="red">다시 처음으로 순환 > 요구수정 > 빠른설계...</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>나선형모형(Spiral Model, 점진적 모형)</h3>
+                        <ul>
+                            <li>보헴, 폭포수 + 프로토</li>
+                            <li>나선을 돌듯이 소프트웨어 개발을 거치며 <b>점진적으로 완벽한 최종 소프트웨어 개발</b></li>
+                            <li>위험 관리 및 최소화</li>
+                            <li>정밀, 유지보수가 필요없음</li>
+                            <li>
+                                <div class="process">
+                                    <span>계획 및 정의</span>
+                                    <span>위험분석</span>
+                                    <span>공학적 개발</span>
+                                    <span>고객평가</span>
+                                    <span><b>순환...</b></span>
+                                </div>
+                                <img src="https://mblogthumb-phinf.pstatic.net/20131025_29/69kg_1382656325642V4YDQ_PNG/%B3%AA%BC%B1%C7%FC%B8%F0%B5%A8.png?type=w2" alt="">
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>애자일 모형(Agile Model)</h3>
+                        <ul>
+                            <li>민첩한, 기민한 고객의 요구사항 변화에 유연하게 대응</li>
+                            <li>짧은 일정주기반복</li>
+                            <li>고객과의 소통에 중점</li>
+                            <li><span class="red">스프린트, 이터레이션</span>이라는 짧은 개발주기 반복 > <b>주기마다 고객의 평가와 요구 수용</b></li>
+                            <li>소규모 프로젝트, 숙달된 개발자, 급변하는 요구사항</li>
+                            <li><a href="#스크럼">스크럼</a>,  <a href="#XP">XP</a>, 칸반, FDD 등</li>
+                            <li>핵심가치 : 프로세스·도구 X <b>상호작용 O</b> , 문서 X 실행되는 <b>SW o</b>, 계약 X <b>협업 O</b> , 계획 X <b>변화 O</b></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>폭포수와 애자일 비교 </h3>
+                        <table>
+                            <colgroup>
+                                <col width="33%">
+                                <col width="33%">
+                                <col width="33%">
+                            </colgroup>
+                            <tr>
+                                <th>구분</th>
+                                <th>폭포수</th>
+                                <th>애자일</th>
+                            </tr>
+                            <tr>
+                                <td>새로운 요구사항 반영</td>
+                                <td>어려움</td>
+                                <td>지속적 반영</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>고객 의사소통</td>
+                                <td>적음</td>
+                                <td>많음</td>
+                            </tr>
+                            <tr>
+                                <td>테스트</td>
+                                <td>마지막</td>
+                                <td>일정주기</td>
+                            </tr>
+                            <tr>
+                                <td>개발중심</td>
+                                <td>계획, 문서</td>
+                                <td>고객</td>
+                            </tr>
+                        </table>
+                    </li>
+                </ol>
+            </article>
+        </section>
+        <section>
+            <header>
+                <h2 id="스크럼">002. 스크럼 기법</h2>
+                <ul>
+                    <li>팀원 스스로 스크럼 팀 구성, 개발작업에 관한 모든것을 스스로해결</li>
+                    <li><b>제품책임자</b>, <b>스크럼마스터</b>, <b>개발팀</b></li>
+                    <li>
+                        <dl>
+                            <dt><h4>제품책임자(PO)</h4></dt>
+                            <dd>제품이해도 높, 의사결정,<b>요구사항 작성 주체, 개발의뢰자 or 사용자</b></dd>
+                            <dd>요구사항 <abbr title="우선순위 적용된 개발 요구사항">백로그 작성</abbr> , 우선순위 지정</dd>
+                            <dd>팀원 : 백로그 작성가능하지만 순위 X </dd>
+                            <dd>테스트하며 주기적으로 요구사항 갱신</dd>
+                            <dt><h4>스크럼 마스터(SM)</h4></dt>
+                            <dd>객관적으로 조언/ 팀원통제아님!</dd>
+                            <dd><b>일일 스크럼 주관</b> 장애요소 공론화 => 처리</dd>
+                            <dt>
+                                <h4>개발팀(DT)</h4>
+                                <dd>제품책임자, 스크럼마스터제외 모든 팀원 대상</dd>
+                                <dd>최대 7~8명</dd>
+                            </dt>
+                        </dl>
+                    </li>
+                </ul>
+            </header>
+            <article>
+                <ul>
+                    <li>
+                        <h3>스크럼개발 프로세스 <br></h3>
+                        <img src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile21.uf.tistory.com%2Fimage%2F214EE04E58A2A65C155D51" alt="">
+                        <div class="process">
+                            <div>
+                                <h4>제품 백로그(product backlog)</h4>
+                                <ul>
+                                    <li>요구사항을 우선순위에 따라 나열</li>
+                                    <li>지속적으로 업데이트</li>
+                                    <li>요구사항기반 전체 일정 계획 릴리즈</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>스프린트 계획 회의(sprint planning meeting)</h4>
+                                <ul>
+                                    <li>스프린트 주기 단기일정 수립</li>
+                                    <li>작업단위 분할, 개별 스프린트 백로그 작성</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>스프린트(Sprint)</h4>
+                                <ul>
+                                    <li>2~4주 개발 진행</li>
+                                    <li>태스크대상 작업시간 추정 > 담당자 배정</li>
+                                    <li>개발자가 원하는 테스크 담당</li>
+                                    <li>Todo, Inp Pogress, Done 상태를 갖는다.</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>일일 스크럼회의(Daily Scrumm Meeting)</h4>
+                                <ul>
+                                    <li>매일 15분 서서진행, <b>소멸차트에 표시</b></li>
+                                    <li>스크럼마스터는 장애요소 해결 서포트</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>스프린트 검토회의(Sprint Review)</h4>
+                                <ul>
+                                    <li>사용자 테스팅</li>
+                                    <li>스프린트 한주당 한시간내</li>
+                                    <li><b>제품책임자는 피드백정리 > 백로그 업데이트</b></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+        </section>
+        <sectino id="XP">
+            <header>
+                <h2>003. XP(eXtreme Programming)</h2>
+                <ul>
+                    <li>고객참여와 개발과정 반복</li>
+                    <li>짧고 반복적 개발주기, 단순설계, 고객참여 > 빠른개발 목적</li>
+                    <li><b>릴리즈기간 짧게 반복</b> > 요구사항의 가시성 높힘</li>
+                    <li>소규모</li>
+                    <li><span class="red">의사소통, 단순성, 용기, 존중, 피드백</span></li>
+                </ul>
+            </header>
+            <article>
+                <ul>
+                    <li>
+                        <h3>XP 개발 프로세스</h3>
+                        <img src="https://lh3.googleusercontent.com/proxy/L3Y-lGcOcf8LBRewoyCN_5c6akXeh2g5qfuUK48nNO--udlkV3QEaLJntz0XHs4qXraR8bTkq0Fkr9QhEqdS51GV_EwpF-3j_DUsSI4pbBStAS6U" alt="">
+                        <div class="process">
+                            <div>
+                                <h4>사용자스토리(user story)</h4>
+                                <ul>
+                                    <li>고객의 요구사항 시나리오</li>
+                                    <li>기능단위로 구성</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>릴리스계획 수립(Release Planning)</h4>
+                                <ul>
+                                    <li>부분 혹은 전체 개발완료 시점 일정 수립</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>스파이크(spike)</h4>
+                                <ul>
+                                    <li>위험감소를 위한 별도의 프로그램</li>
+                                    <li>오직 처리할 문제만 작성(다른조건 무시)</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>이터레이션(iterlation), 주기</h4>
+                                <ul>
+                                    <li>릴리즈 세분화 단위</li>
+                                    <li>1~3주, 새로운 스토리작성 > 이터레이션 포함</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>승인검사(Accept Test), 인수 테스트</h4>
+                                <ul>
+                                    <li>이터레이션 내의 릴리즈 제품 완료, 테스트</li>
+                                    <li>오류는 다음 이터레이션</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4>소규모 릴리즈(Small Release)</h4>
+                                <ul>
+                                    <li>릴리즈기간동안 이터레이션이 완료(테스트, 릴리즈)되면 최종결과물 전달</li>
+                                    <li>릴리즈가 완성품이 아닌결루 계속 진행</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+        </sectino>
+        <section>
+            <header>
+                <h2>004. UML(Unified Modeling Language)</h2>
+                <ul>
+                    <li>개발자와 고객사이의 의사소통을 위한 <b>표준화된 객체지향 모델링 언어</b></li>
+                    <li>시스템 구조 : 6개의 구조 다이어그램 / 시스템 동작 : 7개의 행위 다이어그램</li>
+                    <li><span class="red">사물, 관계, 다이어그램</span></li>
+                </ul>
+            </header>
+            <ol>
+                <li>
+                    <h3>사물(Things)</h3>
+                    <ul>
+                        <li>다이어그램안에서 관계가 형성될 수 있는 대상</li>
+                        <li>
+                            <table>
+                                <tr>
+                                    <th>사물</th>
+                                    <th>내용</th>
+                                </tr>
+                                <tr>
+                                    <td>구조 사물 <br>Structural Things</td>
+                                    <td>
+                                        <ul>
+                                            <li> 개념적, 물리적 요소</li>
+                                            <li>클래스, 노드, 컴포넌트, 유스케이스</li>
+                                        </ul>  
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>행동사물 <br>Behavioral Things</td>
+                                    <td>시간, 공간에따른 요소들의 행위<br>상호작용, 상태머신</td>
+                                </tr>
+                                <tr>
+                                    <td>그룹사물 <br>Grouping Things</td>
+                                    <td>그룹으로 묶은 요소 <br>패키지</td>
+                                </tr>
+                                <tr>
+                                    <td>주해사물 <br>Annotation Things</td>
+                                    <td>부가적인 설명이나 제약</td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>관계(Relationship)</h3>
+                    <ul>
+                        <li>사물과 사물사이의 집합</li>
+                        <li></li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+    </div>
+
+    <script>
+        const btn = document.querySelectorAll("strong");
+        function test() {
+          btn.forEach(v => {
+            const content = v.nextElementSibling;
+            function clickFunction() {
+              if (content.classList.contains("none")) {
+                content.classList.remove("none");
+              } else {
+                content.classList.add("none");
+              }
+            }
+            v.addEventListener("click", clickFunction);
+          });
+        }
+        test();
+      </script>
+</body>
+</html>

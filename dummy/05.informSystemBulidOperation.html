@@ -1,0 +1,518 @@
+<html lang="ko-kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. 정보시스템 구축 관리</title>
+    <link rel="stylesheet" href="./common.css" />
+  </head>
+  <body>
+    <strong>1. 소프트웨어 개발 방법론 활용</strong>
+    <div class="paper">
+      <section>
+        <header>
+          <h2>159. 소프트웨어 개발 방법론</h2>
+          <ul>
+            <li>소프트웨어의 생산성과 품질 향상</li>
+            <li>
+              <b
+                >구조적 방법론, 정보공학방법론, 객체지향방법론, 컴포넌트기반
+                방법론, 애자일 방법론, 제품계열방법론</b
+              >
+            </li>
+          </ul>
+        </header>
+        <article>
+          <ol>
+            <li>
+              <h3>구조적 방법론</h3>
+              <ul>
+                <li>정형화된 분석절차 <b>처리(process)중심 방법론</b></li>
+                <li>검증가능한 프로그램 코드생성 목적</li>
+                <li><b>분할과 정복원리 적용</b></li>
+                <li class="process">
+                  <div>타당성 검토 단계</div>
+                  <div>계획 단계</div>
+                  <div>요구사항 단계</div>
+                  <div>설계 단계</div>
+                  <div>구현 단계</div>
+                  <div>시험 단계</div>
+                  <div>운용/유지보수 단계</div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>정보공학방법론</h3>
+              <ul>
+                <li>
+                  정형화된 기법들을 상호연관있게 통합 및 적용
+                  <b>자료중심 방법론</b>
+                </li>
+                <li>대규모 정보 시스템 구축</li>
+                <li class="process">
+                  <div>정보 전략 계획 수립 단계</div>
+                  <div>업무 영역 분석 단계</div>
+                  <div>업무시스템 설계 단계</div>
+                  <div>업무시스템 구축 단계</div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>객체지향 방법론</h3>
+              <ul>
+                <li>개체를 객체로 만들어 부품조립하듯 소프트웨어 구현</li>
+                <li>
+                  구조적기법의 문제점으로 인해 소프트웨어 위기의 해결책으로 채택
+                </li>
+                <li>구성요소 : <b>객체, 클래스, 메세지</b></li>
+                <li>
+                  기본원칙 :
+                  <span class="red"
+                    ><abbr title="데이터와 데이터 처리함수를 묶음">캡슐화</abbr
+                    >,<abbr
+                      title="다른객체에게 정보숨김, 캡술화에서 중요한 개념"
+                    >
+                      정보은닉</abbr
+                    >,<abbr title="개체의 속성에 집중하여 개략화"> 추상화</abbr
+                    >, 상속성,<abbr
+                      title="하나의 메세지에대해 각 객체가 고유한 방법으로 응답"
+                      >다형성</abbr
+                    ></span
+                  >
+                </li>
+                <li class="process">
+                  <div>요구분석단계</div>
+                  <div>설계 단계</div>
+                  <div>구현 단계</div>
+                  <div>테스트 및 검증 단계</div>
+                  <div>인도단계</div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>컴포넌트 기반 방법론</h3>
+              <ul>
+                <li>컴포넌트 조합 > 애플리케이션 제작</li>
+                <li>컴포넌트 재사용, 시간 노력 절감</li>
+                <li>유지보수 최소화, 생산성 및 품질향상</li>
+                <li class="process">
+                  <div>개발 준비 단계</div>
+                  <div>분석 단계</div>
+                  <div>설계 단계</div>
+                  <div>구현 단계</div>
+                  <div>테스트 단계</div>
+                  <div>전개 단계</div>
+                  <div>인도 단계</div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>애자일 방법론</h3>
+              <ul>
+                <li>짧은 일정주기 반복 개발</li>
+                <li>소규모 프로젝트, 숙달개발자, 급변요구사항</li>
+                <li>XP,스크럼, 칸반, 크리스탈 등이 있음</li>
+                <li class="process">
+                  <div>사용자 스토리</div>
+                  <div><b>2~4반복</b> 계획</div>
+                  <div>개발</div>
+                  <div>승인테스트</div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>제품계열 방법론</h3>
+              <ul>
+                <li>특정제품에 적용하고자하는 공통된 기능 정읭하여 개발</li>
+                <li>
+                  <abbr title="냉장고 등 제품자체 소프트웨어">임베디드</abbr>
+                  개발 적합
+                </li>
+                <li>영역공학: <b>영역분석, 영역설계, 핵심자산구현</b></li>
+                <li>응용공학: <b>제품요구분석, 제품설계, 제품구현</b></li>
+                <li>
+                  <table>
+                    <tr>
+                      <th colspan="4">특정분야의 영역 지식, 핵심자산의 개선</th>
+                    </tr>
+                    <tr>
+                      <td>영역공학</td>
+                      <td>영역 분석 -></td>
+                      <td>영역 설계 -></td>
+                      <td>핵심 자산 구현</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>
+                        ↓<br />
+                        제품 요구사항 <->
+                        <br />↓
+                      </td>
+                      <td>
+                        ↓<br />
+                        제품아키텍쳐 <->
+                        <br />↓
+                      </td>
+                      <td>
+                        ↓<br />
+                        제품 조립생산
+                        <br />↓
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>응용공학</td>
+                      <td>
+                        제품 요구 분석 ->
+                      </td>
+                      <td>
+                        제품 설계 ->
+                      </td>
+                      <td>
+                        제품 구현
+                      </td>
+                    </tr>
+                  </table>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+      </section>
+      <section>
+        <h2>160. 비용 산정 기법</h2>
+        <ol>
+          <li>
+            비용이 지나치게 높음 : 예산낭비, 효율성저하 / 낮음 : 품질문제,
+            개발자 부담
+          </li>
+          <li><b>상향식, 하향식 산정기법</b></li>
+          <li>
+            <h3>소프트웨어 비용 결정 요소</h3>
+            <ul>
+              <li>개발하는 소프트웨어</li>
+              <li>개발에 투입되는 자원</li>
+              <li>소프트웨어 생산성</li>
+            </ul>
+            <ol>
+              <li>
+                <h4>프로젝트요소</h4>
+                <dl>
+                  <dt>제품 복잡도</dt>
+                  <dd>발생 가능한 문제의 난이도</dd>
+                  <dt>시스템 크기</dt>
+                  <dd>개발할 시스템 크기</dd>
+                  <dt>요구되는 신뢰도</dt>
+                  <dd>기간내에 조건하에 프로그램이 필요한 기능수행 정도</dd>
+                </dl>
+              </li>
+              <li>
+                <h4>자원요소</h4>
+                <dl>
+                  <dt>인적 자원</dt>
+                  <dd>개발관련자들의 자질</dd>
+                  <dt>하드웨어 자원</dt>
+                  <dd>장비, 프린터 등</dd>
+                  <dt>소프트웨어 장비</dt>
+                  <dd>언어분석기, 문서화 도구 등</dd>
+                </dl>
+              </li>
+              <li>
+                <h4>생산성 도구</h4>
+                <dt>개발자 능력</dt>
+                <dd>개발자의 전문지식, 경험, 이해도, 창의력 등</dd>
+                <dt>개발기간</dt>
+                <dd>개발 소요 기간</dd>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h2>비용 산정 기법</h2>
+        <table>
+          <colgroup>
+            <col width="*" />
+            <col width="48%" />
+            <col width="48%" />
+          </colgroup>
+          <tr>
+            <th></th>
+            <th>하향식</th>
+            <th>상향식</th>
+          </tr>
+          <tr>
+            <td>개요</td>
+            <td>
+              과거 <b>유사경험을 바탕으로 전문 개발자들이</b> 회의를 통해
+              산정(비과학적)
+            </td>
+            <td>프로젝트의 세부적인 작업단위별로 비용산정 -> 비용집계</td>
+          </tr>
+          <tr>
+            <td>기법</td>
+            <td>
+              <ol>
+                <li>
+                  <h3>전문가 감정 기법</h3>
+                  <ul>
+                    <li>
+                      조직내의 경험 많은 두명이상의 전문가에게 비용 산정 의뢰
+                    </li>
+                    <li>편리, 신속, 의뢰자의 신뢰</li>
+                    <li>새로운 프로젝트와 과거프로젝트와의 다른점 간과</li>
+                    <li>새로운 프로젝트와 유사한 경험이 없을수있다.</li>
+                    <li>개인적, 주관적</li>
+                  </ul>
+                </li>
+                <li>
+                  <h3>델파이기법</h3>
+                  <ul>
+                    <li>많은 전문가 의견 종합</li>
+                    <li>한명의 조정자, 여러명의 전문가</li>
+                    <li class="process">
+                      <div>조정자 : 서식제공(시스템정의서, 비용내역)</div>
+                      <div>산정요원 : 익명 -> 비용산정</div>
+                      <div>조정자 : 요원 반응 요약, 배포</div>
+                      <div>산정요원 : 이전 참고 재산정(익명)</div>
+                      <div>의견이 거의 일치할때까지 반복</div>
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </td>
+            <td>
+              <ol>
+                <li>
+                  <h3>LOC(원시코드라인수)기법</h3>
+                  <ul>
+                    <li>비관치, 낙관치, 기대치를 측정하여 예측치를 구함</li>
+                    <li>측정용이</li>
+                    <li>
+                      <pre>
+          a+4m+b
+  예측치 = --------   a: 낙관치, b:비관치, m:기대치(중간치)
+            6
+                    </pre
+                      >
+                    </li>
+                    <li>
+                      <ul>
+                        <li>
+                          노력(인월) = 개발기간 * 투입인원 = LOC/1인당
+                          평균생산코드라인수
+                        </li>
+                        <li>
+                          개발비용 = 노력(인월) * 단위비용(1인 평균 인건비)
+                        </li>
+                        <li>개발기간 = 노력(인원) * 투입인원</li>
+                        <li>생산성 = LOC / 노력(인월)</li>
+                        <li>
+                          <abbr
+                            title="LOC 기법에 의해 예측된 총 라인 수가 30000라인, 개발에 참여할 프로그래머가 5명, 프로그래머들의 편균생산성이 월간 300라인 일때 개발에 소요되는 기간은?"
+                            >예시 ////</abbr
+                          >
+                          <abbr
+                            title="노력 = 30000/300 = 100명 // 개발기간 = 100명/5명 = 20개월"
+                            >답변</abbr
+                          >
+                        </li>
+                      </ul>
+                    </li>
+                    ㅁㅁㅁ
+                  </ul>
+                </li>
+                <li>
+                  <h3>개발 단계별 인월수(Effort Per Task)기법</h3>
+                  <ul>
+                    <li>
+                      LIC를 보완, 각 기능을 구현시키는데 필요한 노력을
+                      생명주기의 각 단계별로 산정
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h2>161. 수학적 산정기법</h2>
+        <ul>
+          <li>상향식 비용산정기법, 개발비용 산정의 자동화를 목표</li>
+          <li>= 경험적 추정모형 = 실험적추적모형</li>
+          <li><b>과거 유사한 프로젝트 기반으로 경험적 유도</b></li>
+          <li><b>COCOMO모형, Putnam모형, 기능점수 모형</b></li>
+        </ul>
+        <ol>
+          <li>
+            <h3>COCOMO 모형</h3>
+            <ul>
+              <li>제안자 보헴, LOC에 의한 산정기법</li>
+              <li>LOC 예측 후 소프트웨어에따라 다르게 대입</li>
+              <li>같은규모라도 성격게따라 다른 비용</li>
+              <li>비용산정 결과 = ManMonth</li>
+            </ul>
+            <h3>COCOMO의 소프트웨어 개발 유형</h3>
+            <ol>
+              <li>
+                <h4>조직형(Organic Model)</h4>
+                <ul>
+                  <li>
+                    중소규모의 소프트웨어, 일괄 자료처리, 과학기술계산용 등
+                    5만라인이하
+                  </li>
+                  <li>
+                    <b
+                      >노력(MM) = 2.4 *
+                      <abbr title="1000라인(kilo LOC)">KLOC</abbr></b
+                    ><br />
+                    <b>개발기간 = 2.5 * (MM)</b>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h4>반분리형(Semi-Detached Model)</h4>
+                <ul>
+                  <li>
+                    30만 라인 이하, 컴파일러, 인터프리터같은 유틸리티 개발
+                  </li>
+                  <li>
+                    <b
+                      >노력(MM) = 3.0 *
+                      <abbr title="1000라인(kilo LOC)">KLOC</abbr></b
+                    ><br />
+                    <b>개발기간 = 2.5 * (MM)</b>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h4>내장형(Embedded Model)</h4>
+                <ul>
+                  <li>
+                    30만 라인 이상, 신호제어기,실시간처리시스템 등 시스템
+                    프로그램
+                  </li>
+                  <li>
+                    <b
+                      >노력(MM) = 3.6 *
+                      <abbr title="1000라인(kilo LOC)">KLOC</abbr></b
+                    ><br />
+                    <b>개발기간 = 2.5 * (MM)</b>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <h3>COCOMO 모형의 종류</h3>
+            <ol>
+              <li>
+                <h4>기본형 COCOMO (Basic)</h4>
+                <ul>
+                  <li>
+                    소프트웨어의 크기(LOC)와 개발 유형만을 이용하여 비용을
+                    산정하는 모형
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h4>중간형 COCOMO (Intermediate)</h4>
+                <p>다음 4가지 특성의 15가지 요인에의해 비용산정</p>
+                <dl>
+                  <dt>제품의 특성</dt>
+                  <dd>: 요구되는 신뢰도, 데이터베이스 크기, 제품의 복잡도</dd>
+                  <dt>컴퓨터의 특성</dt>
+                  <dd>
+                    : 수행 시간의 제한, 기억저장소의 제한, 가상기계의 안정성,
+                    Turn Around Time
+                  </dd>
+                  <dt>개발 요원의 특성</dt>
+                  <dd>
+                    : 분석가의 능력, 개발분야의 경험, 가상 기계의 경험,
+                    프로그래머의 능력, 프로그래밍 언어의 경험
+                  </dd>
+                  <dt>프로젝트의 특성</dt>
+                  <dd>
+                    : 소프트웨어 도구의 이용, 프로젝트 개발일정, 최신프로그래밍
+                    기법의 이용
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <h4>발전형 COCOMO(Detailed)</h4>
+                <ul>
+                  <li>
+                    중간형의 보완,
+                    <b>개발공정별로 보다 자세하고 정확하게 노력을 산출</b> 하여
+                    비용 산정
+                  </li>
+                  <li>
+                    소프트웨어의 환경과 구성요소가 미리 정의되어있어야함,
+                    <b>개발과정의 후반에 주로 적용</b>
+                  </li>
+                </ul>
+              </li>
+            </ol>
+          </li>
+          <li>
+            <h3>Putnam 모형</h3>
+            <ul>
+              <li>프로젝트 전반의 노력의 분포를 가정하는 모형</li>
+              <li>생명주기 예측 모형</li>
+              <li>
+                Rayleigh-Norden 곡선의 노력분포도를 기초로 한다.<br />
+                <img
+                  src="https://img1.daumcdn.net/thumb/R720x0.q80/?scode=mtistory2&fname=http%3A%2F%2Fcfile26.uf.tistory.com%2Fimage%2F161EB72E4CB451203ED49F"
+                  alt=""
+                />
+              </li>
+              <li>대형프로젝트</li>
+              <li>개발기간이 늘어날수록 프로젝트 적용 인원의 노력 감소</li>
+              <li>
+                <pre>
+                              원시 코드 라인 수
+  개발노력(MM) = ----------------------------------------------
+                환경상수(빈약=2,~/좋=8,~/최적=12,~) * 개발기간            
+                </pre>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>기능점수(FP)모형</h3>
+            <ul>
+              <li>알브레히트 제안</li>
+              <li><b>소프트웨어의 기능을 증대시키는 요인별로</b> 가중치</li>
+              <li>
+                요인별 가중치 합산 > 총기능점수산출 ==
+                <b>기능점수 > 비용 산정</b>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>자동화 추정 도구</h3>
+            SLIM : Putnam, Rayleigh-Norden 기반<br />ESTIMACS : FP기반
+          </li>
+        </ol>
+      </section>
+    </div>
+    <strong>2. IT프로젝트 정보시스템 구축 관리</strong>
+    <div class="paper">
+      <section></section>
+    </div>
+
+    <script>
+      const btn = document.querySelectorAll("strong");
+      function test() {
+        btn.forEach(v => {
+          const content = v.nextElementSibling;
+          function clickFunction() {
+            if (content.classList.contains("none")) {
+              content.classList.remove("none");
+            } else {
+              content.classList.add("none");
+            }
+          }
+          v.addEventListener("click", clickFunction);
+        });
+      }
+      test();
+    </script>
+  </body>
+</html>
