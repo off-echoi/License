@@ -1,5 +1,6 @@
 .process {
   display: flex;
+  min-width: 1000px;
 }
 .process > * {
   margin: 5px;
@@ -18,16 +19,23 @@ h3 {
 }
 table {
   border-collapse: collapse;
+  min-width: 1000px;
 }
 table tr > * {
   padding: 5px 10px;
   border: 1px solid #555;
 }
+table .process{
+  min-width: auto;
+}
 ul {
   padding-inline-start: 20px;
 }
+li{
+  margin-bottom: 5px;
+}
 strong {
-  display: inline-block;
+  display: block;
   border-top: 3px dashed #333;
   padding-top: 10px;
   margin-top: 10px;
@@ -43,4 +51,18 @@ dt {
 }
 .paper.none {
   display: none;
+}
+p{
+  margin: 0.5em 0;
+}
+dl{
+  margin: 0.5em 0; 
+  background: rgba(0,0,0,0.05);
+}
+dt{
+  border-top: 1px dashed #555;
+  margin-top: 10px;
+}
+h4{
+  margin: 1em 0;
 }
