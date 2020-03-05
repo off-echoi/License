@@ -948,6 +948,308 @@
         </ol>
       </section>
     </div>
+    <strong>4. 서비스 보안 구축</strong>
+    <div class="paper">
+      <section>
+        <header>
+          <h2>189. 서비스 공격 유형</h2>
+        </header>
+        <ol>
+          <li>
+            <h3>서비스 거부(DoS:Denial of Service) 공격의 개념</h3>
+            <ul>
+              <li>표적 서버의 정상기능 방해 : 대량의 데이터 한서버에 집중 전송(서버자원 고갈 목적)</li>
+              <li><b>PingOfDeth, SMURFING, SYN Flooding, TearDrop, Land, DDoS</b></li>
+              <li>
+                <ol>
+                  <li>
+                    <h4>Ping of Death(죽음의 핑)</h4>
+                    <ul>
+                      <li>패킷의 크기를 프로토콜 <mark>허용 범위 이상으로 전송</mark> => 네트워크 마비</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>SMURFING(스머핑)</h4>
+                    <ul>
+                      <li><mark>엄천난 양의 데이터를 전송</mark> => 네트워크 불능</li>
+                      <li>네트워크 라우터의 브로드캐스트 주소를 수신지로 변경</li>
+                      <li>해결 : 네트워크 라우터에서 브로드태스트 주소를 사용할 수 없게 설정</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>SYN Flooding</h4>
+                    <ul>
+                      <li><mark>서버가 대기상태에 놓여</mark> 정상적인 서비스를 수행 못하게 함</li>
+                      <li>사용불가 IP로 서버에 'STN'신호 전송 -> 서버는 'SYN+ACK'응답을 보내며 대기 공간 확보 ->  IP는 'ACK' 전송 및 응답 불가의 상태로 서버는 계속 응답을 기다리며 무한대기</li>
+                      <li>해결 : 'SYN'수신 대기 시작을 줄임, 침입차단 시스템 활용</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>TearDrop</h4>
+                    <ul>
+                      <li><mark>패킷 재조립의 오류로 과부하를</mark> 발생시킴</li>
+                      <li>패킷 분할 전송시 순서를 위해 Fragment Offset을 함께 전송 -> 중간에 Fragment Offset값을 변경하여 서버 오류</li>
+                      <li>해결 : Fragment Offset이 잘못된 경우 해당 패킷 폐기</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>Land</h4>
+                    <ul>
+                      <li><mark>송신IP와 수신 IP주소를 같게 설정</mark> => 자기자신에대한 무한 응답</li>
+                      <li>해결 : 송신IP와 수신IP의 적절성 검사</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <h4>DDoS(Distributed Denial of Service, 분산 서비스 거부) 공격</h4>
+                    <ul>
+                      <li>분산된 공격 지점에서 한 곳의 서버로 분산 서비스 공격수행</li>
+                      <li>보안에 취약한 네트워크에 에이전트 설치 = 공격에 이용되는 컨퓨터가 됨</li>
+                      <li>분산 서비스 공격 툴 : Trin00, TFN, TFN2K, Stacheldraht</li>
+                    </ul>
+                  </li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>네트워크 침해 공격 관련 용어</h3>
+            <table>
+              <colgroup>
+                <col width="10%">
+              </colgroup>
+              <tr>
+                <th>스미싱(smishing)</th>
+                <td>
+                  <ul>
+                    <li>문자 이용 -> 개인신용정보 탈취</li>
+                  </ul> 
+                </td>
+              </tr>
+              <tr>
+                <th>스피어 피싱(Spear Phishing)</th>
+                <td>
+                  <ul>
+                    <li>사회공학기법 => 특성대상 선정 , 지속적인 스팸메일</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>APT<br>(Advanced Persistent Threats, 지능형 지속 위협)</th>
+                <td>
+                  <ul>
+                    <li>조직적으로 특정 기업이나 네트워크 침투</li>
+                    <li>보안무력화, 정보수집 => 무력화</li>
+                    <li>내부자에게 악성 코드포함 이메일</li>
+                    <li>악성코드 Usb</li>
+                    <li>P2P사이트 접속시 감염</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>무작위 대입 공격<br>(Brute Force Attack)</th>
+                <td>
+                  <ul>
+                    <li>암호화된 문서에 적용가능한 모든 값 대입</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>큐싱</th>
+                <td>
+                  <ul>
+                    <li>큐알코드를 통해 악서앱 다운 유도</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>SQL 삽입 공격</th>
+                <td>
+                  <ul>
+                    <li>전문 스캐너 프로그램으로 웹사이트 무작위 공격 => 취약사이트 발견 시 데이터베이스 조작</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>크로스 사이트 스크립팅<br>(XSS: Cross Site Scripting)</th>
+                <td>
+                  <ul>
+                    <li>스크립트 취약점을 악용한 해킹 기법</li>
+                    <li>특정 게시물 클릭시 사용자의 로그인정보, 개인정보 해킹</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </li>
+          <li>
+            <h3>정보 보안 침해 공격 관련 용어</h3>
+            <table>
+              <tr>
+                <th>좀비PC</th>
+                <td>
+                  <ul>
+                    <li>악성코드에 감염되어 다른 컴퓨터 조종, DDos에 이용</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>C&C 서버</th>
+                <td>
+                  <ul>
+                    <li>좀비PC엣 명령을 내리는, 악성코드제어 서버</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>봇넷</th>
+                <td>
+                  <ul>
+                    <li>악성프로그램이 깔려버린 컴퓨터들이 네트워크로 열결된 형태</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>웜(Worm)</th>
+                <td>
+                  <ul>
+                    <li>연속적으로 자신을 복제 > 시스템 부학 높임 => 프로그램 다운</li>
+                    <li>분산서비스거부(DDos)공격, 버퍼오버플로우공격, 슬래머 등</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>제로데이 공격</th>
+                <td>
+                  <ul>
+                    <li>보안취약점이 발견되자마자 공격, 공격의 신속성을 의미</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>키로거공격</th>
+                <td>
+                  <ul>
+                    <li>키보드의 움직임 탐지, 개인정보 해킹</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>랜섬웨어</th>
+                <td>
+                  <ul>
+                    <li>내부문서나 파일을 암호화, 해독조건으로 돈을 요구</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>백도어</th>
+                <td>
+                  <ul>
+                    <li>시스템 설계자가 편의를 위해 만들어놓은 통로, 범죄에 악용</li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <th>트로이 목마</th>
+                <td>
+                  <ul>
+                    <li>정상프로그램인척 잠입, 동작할때 활성화되어 부작용</li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <header>
+          <h2>193. 보안 솔루션</h2>
+        </header>
+        <ol>
+          <li>
+            <h3>방화벽(Firewall)</h3>
+            <ul>
+              <li>전송정보를 선발하여 수용, 거부, 수정하는 기능을 가진 침입 차단시스템</li>
+              <li>내부 -> 외부 : 통과<br>외부 -> 내부 : 인증된 패킷만 통과</li>
+            </ul>
+          </li>
+          <li>
+            <h3>침입탐지 시스템(IDS:Instrucsion Detection System)</h3>
+            <ul>
+              <li>컴퓨터의 비정상적인 사용, 오용, 남용탐지</li>
+              <li>해커 침입패턴에 대한 추적과 유해정보 감시</li>
+              <li>
+                <b>오용 탐지 </b> : 미리 입력해둔 공격 패턴 감지
+              </li>
+              <li><b>이상 탐지</b> : 평균적인 시스템상태를 기준으로 비정상적인 행위나 사용 감지</li>
+              <li>
+                침입탐지 시스템의 위치
+                <dl>
+                  <dt>패킷이 라우터로 들어오기 전</dt>
+                  <dd>네트워크에 시도되는 모든 공격 탐지</dd>
+                  <dt>라우터 뒤</dt>
+                  <dd>라우터에 의해 패킷 필터링을 통화간 모든 공격 탐지</dd>
+                  <dt>방화벽 뒤</dt>
+                  <dd>내부에서 외부로 향하는 공격 감지</dd>
+                  <dt>내부 네트워크</dt>
+                  <dd>내부에서 내부로의 해킹공격 탐지</dd>
+                  <dt>DMZ</dt>
+                  <dd>외부 인터넷 서비스를 제공하는 서버가 위치하는 네트워크</dd>
+                  <dd>공격으로 부터 중요데이터 보호, 서비스중단 방지</dd>
+                </dl>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>침입 방지 시스템(IPS : Instrucsion Prevention System)</h3>
+            <ul>
+              <li>방화벽 + 침입탐지시스템</li>
+              <li>비정상적인 트래픽을 능동적으로 차단, 격리</li>
+              <li>침입탐지시스템 : 패킷 검사</li>
+              <li>방화벽 : 비정상적인 패킷 차단</li>
+            </ul>
+          </li>
+          <li>
+            <h3>데이터 유출 방지(DLP : Data Leakage / Loss Prevention)</h3>
+            <ul>
+              <li>내부정보의 외부유출 방지</li>
+              <li>사내직원의 PC, 네트워크 등 사용자의 행위 탐지</li>
+            </ul>
+          </li>
+          <li>
+            <h3>웹 방화벽(Web Firewall)</h3>
+            <ul>
+              <li>일반 방화벽이 감지하지 못하는 SQL삽입공격, Cross-siteScripting 등의 웹 기반 공격 방어 목적</li>
+              <li>웹 관련 공격 감시, 웹 서버에 도달 전 차단</li>
+            </ul>
+          </li>
+          <li>
+            <h3>VPN(Virtual Private Network, 가상 사설 통신망)</h3>
+            <ul>
+              <li>가상 사설 네트워크 인터넷 등 통신사업자의 공증 네크워크와 암호화 기술을 이용 = 본인의 전용회선을 사용하는것처럼 </li>
+              <li>비용부담 줄임, 원격업무 수행</li>
+            </ul>
+          </li>
+          <li>
+            <h3>NAC(Network Access Control)</h3>
+            <ul>
+              <li>네트워크에 접속하는 내부 PC의 MAC주소를 IP관리 시스템에 등록한 후 일관된 보안관리 기능을 제공</li>
+              <li>내부 pc의 소프트웨어 사용현황을 관리 => 불법적인 소프트웨어 설치 방지</li>
+              <li>일괄적인 배포기능 => 백신이나 보안패치 일괄 설치,수행</li>
+              <li>네트워크에 접속된 비인가 시스템 자동 차단</li>
+            </ul>
+          </li>
+          <li>
+            <h3>ESM(Enterprise Securoty Managemant)</h3>
+            <ul>
+              <li>다양한 장비에서 발생하는 로그 및 보안 이벤트 통합,관리</li>
+              <li>방화벽, IDS,IPS, 웹방화벽 VPN에서 발생한 로그 및 보안 이켄트 통합, 관리</li>
+              <li>종합적인 보완 관리 체계를 수립할 수 있다.</li>
+            </ul>
+          </li>
+        </ol>
+      </section>
+    </div>
+
     <script src="common.js"></script>
   </body>
 </html>

@@ -1,0 +1,131 @@
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. 프로그래밍 언어 활용</title>
+    <link rel="stylesheet" href="./common.css">
+</head>
+<body>
+    <strong>2. 프로그래밍 언어 활용</strong>
+    <div class="paper">
+        <section>
+            <header>
+                <h2>126. 데이터 타입(B)</h2>
+                <ul>
+                    <li>정수 타입 : 소수점 없는 숫자</li>
+                    <li>부동소수점 타입 : 실수, 소수점 있는 숫자</li>
+                    <li>문자 타입 : 한 문자, '' 사용</li>
+                    <li>문자열 타입 : 문자열 , "Hello" 사용</li>
+                    <li>불린 타입 : 조건의 참 거짓, 기본은 거짓</li>
+                    <li>배열 타입 : 데이터 집합, { , , }로 구분</li>
+                </ul>
+            </header>
+        </section>
+        <section>
+            <header>
+                <h2>127. 변수</h2>
+                <ul>
+                    <li>컴퓨터가 명령처리 도중 발생하는 값을 저장하기 위한 공간</li>
+                    <li><b>정수형, 실수형, 문자형, 포인터형</b></li>
+                </ul>
+            </header>
+            <ol>
+                <li>
+                    <h3>변수명 작성 규칙 / C언어 기준</h3>
+                    <ul>
+                        <li>영문, 숫자, _(uder bar) 사용</li>
+                        <li>첫글자는 숫자가 올 수 없음</li>
+                        <li>글자수 제한 없음</li>
+                        <li>공백, *,+,-,/ 등 특수문자 사용 불가</li>
+                        <li>대,소문자 구분</li>
+                        <li>변수 선언 문자 끝에 반드시 세미콜론(;)</li>
+                        <li>예약어 사용 불가
+                            <dl>
+                                <dt>제어문</dt>
+                                <dd>[do, for, while], [case, default, else, if, switch], [break, continue, goto, return]</dd>
+                                <dt>자료형</dt>
+                                <dd>char, double, enum, float, int, long, short, signed, struct, typedef, union,  unsigned, void</dd>
+                                <dt>기억 클래스</dt>
+                                <dd>auto, extern, register, static</dd>
+                                <dt>기타</dt>
+                                <dd>const, sizeof, volatile</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>기억 클래스</h3>
+                    <ul>
+                        <li>기억영역을 결정하는 작업</li>
+                        <li>변수선언시 할당되는 기억영역에 따라 사용범위 제한</li>
+                    </ul>
+                    <table>
+                        <colgroup>
+                            <!-- <col width="15%"> -->
+                        </colgroup>
+                        <tr>
+                            <th>종류</th>
+                            <th>설명</th>
+                            <th>기억영역</th>
+                            <th>예약어</th>
+                            <th>생존기간</th>
+                            <th>사용 범위</th>
+                        </tr>
+                        <tr>
+                            <td>자동변수 <br>(Automatic Variable)</td>
+                            <td>블록 내에 선언 <br> 함수나 블록이 실행될때만 존재 <br>초기화하지 않으면 쓰레기값저장</td>
+                            <td>메모리(스택)</td>
+                            <td>auto(생략가능)</td>
+                            <td rowspan="2">일시적</td>
+                            <td rowspan="2">지역적</td>
+                        </tr>
+                        <tr>
+                            <td>레지스터 변수<br> (Register Variable)</td>
+                            <td>자주사용 변수 저장 => 처리속도 향상<br>블록스코프<br>사용개수한정, 다 쓰면 자동으로 메모리에 할당<br>메모리주소가 없기때문에 변수의 주로를 구하는 연산자 사용불가</td>
+                            <td>레지스터</td>
+                            <td>register</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                정적변수 <br>(Static Variable)
+                            </td>
+                            <td>내부 변수 : 블록스코프 <br>외부 변수 : 전역<br>값 소멸 안됨 <br> 변수 선언과 동시에 초기화, 생략하면 0</td>
+                            <td rowspan="2">메모리(데이터)</td> 
+                            <td>static</td>
+                            <td rowspan="2">영구적</td>
+                            <td>
+                                내부 : 지역적 <br>
+                                외부 : 전역적
+                            </td>
+                        </t>
+                        <tr>
+                            <td>외부변수</td>
+                            <td>다른 변수를 참조하기위한 변수<br>함수밖에서 선언 <br>종료뒤에도 소멸 안함, 초기화안하면 0 <br>다른 변수를 참조했을 경우 초기화 못함</td>
+                            <td>extern</td>
+                            <td>전역적</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <h3>변수의 선언</h3>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h2>연산자</h2>
+            <ol>
+                <li>
+                    <h3>비트연산자</h3>
+                    <p>맨 왼쪽의 비트가 0이면 양수, 1이면 음수</p>
+                    <a href="https://meaningone.tistory.com/606" target="_blank">이진수 십진수 바꾸기</a><br>
+                    <img src="https://lh3.googleusercontent.com/proxy/132Eu43aG02oun02gO08FtjDwO0nXY6kWirGLdFdPtEye2YNj_X_Jd2HwERXvrmZ1AOQoY9eENta9Z1Qg4Me1wngPlJRJm63x-6XgWH8whaSJy2qllSf47Ppz-Tj4gRT_iheHlRg4cg-iLST1Yt2WAo3-Bdv" alt="">
+                </li>
+            </ol>
+        </section>
+    </div>
+    <script src="common.js"></script>
+</body>
+</html>
