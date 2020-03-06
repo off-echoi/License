@@ -160,40 +160,14 @@
                             데이터를 물리적인 공간이나, 논리적인 구조로 조직화 하거나 물리적인 공간에 구축한 것
                         </li>
                         <li><b>논리저장소</b>와 <b>물리저장소가</b>가 있다.</li>
-                        <li><b>논리 저장소 : </b> 데이터 및 데이터 간의 연관성, 제약조건 식별 => 논리적인 구조로 조직화</li>
+                        <li><b>논리 데이터 저장소 : </b> 데이터 및 데이터 간의 연관성, 제약조건 식별 => 논리적인 구조로 조직화</li>
+                        <li><b>물리 데이터 저장소 : </b>논리저장소의 데이터를 물리적 특성을 고려해 하드웨어 저장장치에 저장</li>
+                        <li>논리데이터 저장소를 거쳐 물리 데이터 저장소를 구축하는 과정 == 데이터베이스 구축 과정과 동일</li>
                     </ul>
                 </li>
             </ul>
         </section>
     </div>
-
-    <div class="wrap">
-        <!-- 동영상 클릭 방지를 위한 div -->
-        <div class="mask"></div>
-
-        <!-- <iframe width="100%" height="100%"
-        src="https://www.youtube.com/embed/n04lcwliKao?modestbranding=1&autoplay=1&controls=1&showinfo=0&rel=0&loop=1&playlist=n04lcwliKao&enablejsapi=1&widgetid=1"
-        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen style="z-index:90;"></iframe> -->
-    </div>
-
-    <style>
-    .wrap{
-        position: relative;
-    }
-    .mask{
-        position: absolute;
-        z-index: 500;
-    }
-    </style>
-    
-    <script>
-        const wrap = document.querySelector('.wrap');
-        const mask = wrap.querySelector('.mask');
-        // 동영상 클릭 방지 div의 넓이와 높이 설정
-        mask.setAttribute('style',`width:${wrap.clientWidth}; height:${wrap.clientWidth}`);
-    </script>
-    <script src="common.js"></script>
 </body>
 
 </html>
