@@ -165,41 +165,35 @@
                 </li>
             </ul>
         </section>
-        <div class="wrap">
-            <!-- <div class="mask"></div> -->
-            <iframe width="100%" height="100%"
-            src="https://www.youtube.com/embed/n04lcwliKao?modestbranding=1&autoplay=1&controls=1&showinfo=0&rel=0&loop=1&playlist=n04lcwliKao&enablejsapi=1&widgetid=1"
-            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen style="z-index:90;"></iframe>
-        </div>
     </div>
-    
+
+    <div class="wrap">
+        <!-- 동영상 클릭 방지를 위한 div -->
+        <div class="mask"></div>
+
+        <!-- <iframe width="100%" height="100%"
+        src="https://www.youtube.com/embed/n04lcwliKao?modestbranding=1&autoplay=1&controls=1&showinfo=0&rel=0&loop=1&playlist=n04lcwliKao&enablejsapi=1&widgetid=1"
+        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen style="z-index:90;"></iframe> -->
+    </div>
+
     <style>
-    /* .wrap{
-        width: 100%;
-        height: 100%;
+    .wrap{
+        position: relative;
     }
     .mask{
-        width: 100%;
-        height: 100%;
         position: absolute;
         z-index: 500;
-
-    } */
-    .wrap{
-        width: 100%;
-        height: 100%;
     }
     </style>
+    
     <script>
-        // const wrap = document.querySelector('.wrap');
-        // const mask = my.querySelector('.mask');
-        // mask.setAttribute('style',`width:${wrap.clientWidth}; height:${wrap.clientWidth}`);
-
-
-
+        const wrap = document.querySelector('.wrap');
+        const mask = wrap.querySelector('.mask');
+        // 동영상 클릭 방지 div의 넓이와 높이 설정
+        mask.setAttribute('style',`width:${wrap.clientWidth}; height:${wrap.clientWidth}`);
     </script>
-    <!-- <script src="common.js"></script> -->
+    <script src="common.js"></script>
 </body>
 
 </html>
