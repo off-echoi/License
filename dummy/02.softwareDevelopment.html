@@ -1,0 +1,205 @@
+<html lang="ko-kr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. 소프트웨어 개발</title>
+    <link rel="stylesheet" href="./common.css" />
+</head>
+<body>
+    <strong>1. 데이터 입·출력 구현</strong>
+    <div class="paper">
+        <section>
+            <header>
+                <h2>034. 자료 구조</h2>
+                <ul>
+                    <li>자료의 표현과 관련된 연산자</li>
+                    <li>자료의 조직화, 구조화</li>
+                    <li>필요한 모든 연산을 처리 가능</li>
+                    <li>자료 구조에 따라 프로그램 실행 시간이 달라짐</li>
+                </ul>
+            </header>
+            <ul>
+                <li>
+                    <h4>자료구조의 분류</h4>
+                </li>
+                <li>
+                    <table>
+                        <colgroup>
+                            <col width="110px">
+                            <col width="110px">
+                        </colgroup>
+                        <tr>
+                            <th rowspan="6">선형구조</th>
+                            <td colspan="2">배열(Array)</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">선형리스트(Linear List)</td>
+                            <td>연속 리스트(Contiguous List)</td>
+                        </tr>
+                        <tr>
+                            <td>연결 리스트(Linked List)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">스택(Steak)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">큐(Queue)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">데크(Deque)</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">
+                                비선형구조
+                            </th>
+                            <td colspan="2">트리(Tree)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">그래프(Graph)</td>
+                        </tr>
+                    </table>
+                </li>
+            </ul>
+            <ol>
+                <li>
+                    <h3>선형 : 배열(Array)</h3>
+                    <ul>
+                        <li>동일한 자료형 데이터, 같은 크기로 나열 <b>순서를 가지고있음</b></li>
+                        <li>정적인 자료구조 = 기억장소의 추가 어려움</li>
+                        <li>데이터 삭제 => 기억장소 빈공간 = <b>메모리 낭비 발생</b></li>
+                        <li>첨자[n]로 데이터 접근 / 첨자의 갯수에 따라 n차원 배열이라고 부름</li>
+                        <li>반복적 데이터 처리 작업</li>
+                        <li>데이터마다 동일한 이름 사용 => 처리 간편</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>선형 : 선형리스트(Linear List)</h3>
+                    <ul>
+                        <li>일정한 순서로 나열</li>
+                        <li><b>연속 리스트 : 배열사용</b>/ <b>연결 리스트 : 포인터 사용</b></li>
+                        <li>
+                            <dl>
+                                <dt>연속 리스트(Contiguous List)</dt>
+                                <dd>연속되는 기억저장소 리스트</dd>
+                                <dd>삽입, 삭제시 자료의 이동 => 기억장소 이용 효율이 좋다(밀도1) / 데이터 삽입을 위해선 연속적인 기억공간 필요</dd>
+                                <dt>연결 리스트(Linked List)</dt>
+                                <dd>반드시 연속적으로 자료를 배열시지키지 않음 = 임이의 기억공간에 기억</dd>
+                                <dd>자료 항목의 순서에 따라 노드의 포인터 부분을 이용하여 연결</dd>
+                                <dd>노드의 삽입. 삭제 용이</dd>
+                                <dd>기억공간이 연속적이지 않아도 됨(포인터 사용)</dd>
+                                <dd>포인터(링크)가 있으므로 기억공간의 효율이 좋지 않음</dd>
+                                <dd>포인터가 가리키는 곳으로 이동해야하기 때문에 접근속도가 느림</dd>
+                                <dd>중간 노드 연결이 끊어지면 다음 노드를 찾기 힘들다</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>선형 : 스택(Stack)</h3>
+                    <ul>
+                        <li><b class="red">한쪽에서만 자료의 삽입, 삭제</b></li>
+                        <li>나중에 삽인된 자료가 먼저 삭제 <b>후입선출(LIFO)</b></li>
+                        <li>스택의 기억공간이 꽉차면 <b>오버플로발생</b>, 삭제할 데이터가 없는데 삭제하면 <b>언더플로발생</b></li>
+                        <li>TOP : 스택에서 가장 마지막 자료가 삽입된 기억 위치</li>
+                        <li>Bottom : 스택의 가장 밑 바닥</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>선형 : 큐(Queue)</h3>
+                    <ul>
+                        <li>한쪽 삽입, 한쪽 삭제</li>
+                        <li>먼저 삽입 => 먼저 삭제 <b>후입선출(FIFO)</b></li>
+                        <li><b>운영체제의 작업 스케줄링에 사용</b></li>
+                        <li>프런트 포인터 : 먼저 삽입된 기억공간</li>
+                        <li>리어 포인터 : 마지막에 삽입된 기억공간(삽입시 사용)</li>
+                    </ul>
+                </li>
+            </ol>
+            <ol>
+                <li>
+                    <h3>비선형 : 트리(TREE)</h3>
+                    <ul>
+                        <li><img src="https://3.bp.blogspot.com/-mkXOdT8GI_4/VK-ZG9KdLgI/AAAAAAAAAWE/6v5dmUDJShg/s1600/%ED%8A%B8%EB%A6%AC%EA%B5%AC%EC%A1%B0_2.PNG"
+                                alt=""></li>
+                        <li>정점(노드)와 선분(브랜치)를 이용하여 사이클을 이루지 않도록 구성하는 그래프</li>
+                        <li>노드 : 하나의 기억공간 / 링크 : 노드와 노드를 연결</li>
+                        <li>족보, 조직도 등을 표현하기 적합</li>
+                        <li>디그리(차수) : 각 노드에서 뻗어나온 가지 수 <br>A = 3, C = 1, B = 2</li>
+                        <li>맆노드(단말노드) : 자식이 없는, 디그리가 0인 노드</li>
+                        <li>트리의 디그리 : 노드의 디그리 중에서 가장 많은 수 <br>A나 D가 3개의 디그리를 가지므로 3 이다.</li>
+                        <li>
+                            <h4>트리의 순회 방법</h4>
+                            <u>앞쪽이 중간에 들어옴, 오른쪽은 항상 왼쪽보다 뒤</u>
+                            <dl>
+                                <dt>중위순회</dt>
+                                <dd>왼 -> 중 -> 오</dd>
+                                <dt>전위순회</dt>
+                                <dd>중 -> 왼 -> 오</dd>
+                                <dt>후위순회</dt>
+                                <dd>왼 -> 오 -> 중</dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>비선형 : 그래프</h3>
+                    <ul>
+                        <li>간선의 갯수 <br> 무방향그래프 : n*(n-1)/2 <br>방향그래프 : n(n-1) <br>최소비용 신장트리 : n-1</li>
+                    </ul>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <h2>데이터 저장소/ 데이터베이스 / DBMS</h2>
+            <ul>
+                <li>
+                    <h3>데이터 저장소</h3>
+                    <ul>
+                        <li>
+                            데이터를 물리적인 공간이나, 논리적인 구조로 조직화 하거나 물리적인 공간에 구축한 것
+                        </li>
+                        <li><b>논리저장소</b>와 <b>물리저장소가</b>가 있다.</li>
+                        <li><b>논리 저장소 : </b> 데이터 및 데이터 간의 연관성, 제약조건 식별 => 논리적인 구조로 조직화</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <div class="wrap">
+            <!-- <div class="mask"></div> -->
+            <iframe width="100%" height="100%"
+            src="https://www.youtube.com/embed/n04lcwliKao?modestbranding=1&autoplay=1&controls=1&showinfo=0&rel=0&loop=1&playlist=n04lcwliKao&enablejsapi=1&widgetid=1"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="z-index:90;"></iframe>
+        </div>
+    </div>
+    
+    <style>
+    /* .wrap{
+        width: 100%;
+        height: 100%;
+    }
+    .mask{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 500;
+
+    } */
+    .wrap{
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+    <script>
+        // const wrap = document.querySelector('.wrap');
+        // const mask = my.querySelector('.mask');
+        // mask.setAttribute('style',`width:${wrap.clientWidth}; height:${wrap.clientWidth}`);
+
+
+
+    </script>
+    <!-- <script src="common.js"></script> -->
+</body>
+
+</html>
