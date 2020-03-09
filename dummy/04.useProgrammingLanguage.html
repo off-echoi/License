@@ -126,6 +126,139 @@
             </ol>
         </section>
     </div>
+    <strong>3. 응용 SW 기초 기술 활용</strong>
+    <div class="paper">
+        <section>
+            <header>
+                <h2>141. 운영체제의 개념</h2>
+                <ul>
+                    <li>컴퓨터 자원 관리 / 사용자에게 환경제공</li>
+                    <li>유틸리티와 하드웨어 사이에 존재<br><img src="https://t1.daumcdn.net/cfile/tistory/999D32335C4D41EB2D" alt="" style="width:300px;"></li>
+                </ul>
+                <ol>
+                    <li>
+                        <h3>운영체제의 목적</h3>
+                        <table>
+                            <tr>
+                                <th>처리능력(ThroughPut)</th>
+                                <td>일정시간대비 처리하는 일의 양</td>
+                            </tr>
+                            <tr>
+                                <th>반환시간(Turn Around Time)</th>
+                                <td>작업 의뢰로부터 완료까지의 시간</td>
+                            </tr>
+                            <tr>
+                                <th>사용가능도(Availability)</th>
+                                <td>사용하고자할때 즉시 사용가능한 정도</td>
+                            </tr>
+                            <tr>
+                                <th>신뢰도(Reliability)</th>
+                                <td>주어진 문제를 정확하게 해결하는 정도</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <h3>운영체제의 기능</h3>
+                        <ul>
+                            <li>파일 및 정보등의 자원 관리</li>
+                            <li>자원 스케줄링기능 제공</li>
+                            <li>사용자와 시스템간 인터페이스 제공</li>
+                            <li>각종 하드웨어, 네트워크 관리,제어</li>
+                            <li>데이터관리, 데이터 및 자원의 공유기능</li>
+                            <li>시스템오류 검사, 복구</li>
+                            <li>자원 보호기능</li>
+                            <li>입,출력에 대한  보조기능 제공</li>
+                            <li>가상계산기 기능</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>운영체제의 주요 자원 관리</h3>
+                        <table>
+                            <tr>
+                                <th>프로세스 관리</th>
+                                <td>프로세스 스케줄링, 동기화 <br>프로세스 생성, 제거,시작,정리, 메시지전달</td>
+                            </tr>
+                            <tr>
+                                <th>기억장치 관리</th>
+                                <td>메모리할당 및 회수 관리</td>
+                            </tr>
+                            <tr>
+                                <th>주변장치 관리</th>
+                                <td>입출력장치 스케줄링 및 전반적인 관리</td>
+                            </tr>
+                            <tr>
+                                <th>파일관리</th>
+                                <td>파일의 생성,삭제,변경,유지</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <h3>운영체제의 종류</h3>
+                        <table>
+                            <tr>
+                                <th>UNIX <br>서버용<br>다중작업처리</th>
+                                <td>MIT,AT&T 개발</td>
+                                <td rowspan="3">CLI</td>
+                            </tr>
+                            <tr>
+                                <th>LINUX<br>서버용<br>다중작업처리</th>
+                                <td>UNIX호환가능한 커널형, 리누스토발즈 개발, 누구나 활용 및 재배포 가능</td>
+                            </tr>
+                            <tr>
+                                <th>MS-DOS<br>개인용<br>단일작업처리</th>
+                                <td>window이전에 사용되던 운영체제</td>
+                            </tr>
+                            <tr>
+                                <th>MacOS<br>개인용<br>다중작업처리</th>
+                                <td>UNIX기반 애플의 운영체제</td>
+                                <td rowspan="2">GUI</td>
+                            </tr>
+                            <tr>
+                                <th>window<br>개인용<br>다중작업처리</th>
+                                <td>
+                                    MS가 개발할 운영체제
+                                </td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <h3>UNIX/LINUX/MacOs</h3>
+                        <ul>
+                            <li>
+                                <h4>UNIX의 개요</h4>
+                                <ul>
+                                    <li>시분할 시스템을 위한 대화식 운영체제, 소스가 공개된 오픈시스템</li>
+                                    <li>AT&T 벨 연구소, MIT 개발</li>
+                                    <li>C언어로 작성 => 이식성이 높음 & 호환성이 높음</li>
+                                    <li>다중사용자(멀티유저), 다중작업 지원(멀티테스킹,멀티프로그래밍)</li>
+                                    <li><b>통신망 관리용 운영체제로 적합</b></li>
+                                    <li>다양한 유틸리티 존재, 전문적인 프로그램 개발에 적합</li>
+                                </ul>
+                                <h4>UNIX 시스템의 구성</h4>
+                                <ul>
+                                    <li><img src="https://1.bp.blogspot.com/-LLFUqXEtBwI/V0uYSfJJTJI/AAAAAAAAAMY/kvPOYZOndNol2JGbdrDIrObkc4r8Zpy6ACLcB/s320/1234.PNG" alt=""></li>
+                                    <li>
+                                        <dl>
+                                            <dt>커널(Kernel)</dt>
+                                            <dd>UNIX의 <b>핵심적인 부분</b></dd>
+                                            <dd>부팅 시 주기억 장치에 적재 -> 상주하면서 실핼</dd>
+                                            <dd>하드웨어 보호, 프로그램과 하드웨어간의 인터페이스 역할</dd>
+                                            <dd>프로세스(CPU 스케줄링), 기억장치, 파일관이, 입출력관리, 프로세스간 통신, 데이터전송 및 변환 등 관리</dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dt>쉘(Shell)</dt>
+                                        <dd></dd>
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                </ol>
+            </header>
+        </section>
+    </div>
     <script src="common.js"></script>
 </body>
 </html>
