@@ -174,6 +174,163 @@
             </ul>
         </section>
     </div>
+    <strong>4. 어플리케이션 관리</strong>
+    <div class="paper">
+        <section>
+            <header>
+                <h2>051. 테스트 기법 에따른 애플리케이션 테스트</h2>
+            </header>
+            <ol>
+                <li>
+                    <h3>화이트박스 테스트(WhiteBox-test)</h3>
+                    <ul>
+                        <li>모듈의 원시코드 오픈시킨 상태에서 테스트 <span class="red">논리적인</span> 모든 경로를 테스트</li>
+                        <li>설계된 절차에 초점을 둔 구조적 테스트 <b>테스트 과정의 초기에 적용</b></li>
+                        <li>모듈안의 작동을 직접 관찰</li>
+                        <li>원시코드(모듈)의 모든 문장을 한번 이상 실행</li>
+                        <li>선택, 반복 등의 분기점부분을 수행함으로 <b>논리적 경로를제어함</b></li>
+                    </ul>
+                    <h4>
+                        화이트박스 테스트의 종류
+                    </h4>
+                    <table>
+                        <tr>
+                            <th>기초 경로 검사</th>
+                            <td>
+                                <ul>
+                                    <li>대표적인 화이트박스 기법</li>
+                                    <li>설계자가 절차적 설계의 논리적 복잡성을 측정할 수 있게 해주는 기법</li>
+                                    <li>테스트 결과는 실행경로의 기초를 정의하는 지침으로 사용</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>제어 구조 검사</th>
+                            <td>
+                                <dl>
+                                    <dt>조건 검사(Condition Testing)</dt>
+                                    <dd>모듈 내의 논리적 조건을 테스트</dd>
+                                    <dt>루프 검사(Loop Testing)</dt>
+                                    <dd>프로그램의 반복 구조에 초점을 맞춰 실시</dd>
+                                    <dt>데이터 흐름 검사(Data Flow Testing)</dt>
+                                    <dd>변수의 정의와 변수 사용 위치에 초점을 맞춰 실시 </dd>
+                                </dl>
+                            </td>
+                        </tr>
+                    </table>
+                    <h4>화이트박스 테스트의 검증 기준 (모드 코드 커버리지에 속함: 구조 코드가 얼마나 테스트 되었는지 측정)</h4>
+                    <table>
+                        <tr>
+                            <th>문장 검증 기준<br>(Statement Coverage)</th>
+                            <td>모든 구문이 한 번 이상 실행되도록 케이스 설계</td>
+                        </tr>
+                        <tr>
+                            <th>분기 검증 기준<br>(Branch Coverage)</th>
+                            <td>모든 조건문이 한 번 이상 수행되도록 설계</td>
+                        </tr>
+                        <tr>
+                            <th>조건 검증 기준<br>(Condition Coverage)</th>
+                            <td>조건이 true/false인 경우가 한 번 이상 수행되도록</td>
+                        </tr>
+                        <tr>
+                            <th>분기/조건 기준<br>(Branch/Condition Coverage)</th>
+                            <td>모든 조건문과 각 조건문의 true/false 를 한번 이상 수행되도록</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <h3>블랙박스 테스트(Black Box Test)</h3>
+                    <ul>
+                        <li><b>= 기능 테스트</b></li>
+                        <li>사용자의 요구사항 명세르 보며 진행, 구현된 기능을 테스트 함</li>
+                        <li>소프트웨어 인터페이스에서 실행</li>
+                        <li>테스트 과정의 후반부 / 기능누락, 인텉페이스 오류 등</li>
+                    </ul>
+                    <h4>블랙박스 테스트의 종류</h4>
+                    <table>
+                        <tr>
+                            <th>동치 분할 검사<br>(Equvalance Partitioning Testing)</th>
+                            <td><ul>
+                                <li>입력자료에 초점을 맞춰 테스트</li>
+                                <li>타당한 입력자료/타당하지 않은 입력자료 를 입력 => 자료에 맞는 결과가 출력되는지 확인</li>
+                            </ul></td>
+                        </tr>
+                        <tr>
+                            <th>경계값 분석<br>(Boundary Value Analysis)</th>
+                            <td>
+                                <ul>
+                                    <li>동치분할 보완</li>
+                                    <li>입력조건의 경계값을 테스트 케이스로 선정</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>원인-효과 그래프 검사<br>(Cause-Effect Graphing Testing)</th>
+                            <td>입력데이터간의 관계와 출력에 영양을 미치는 상황을 체계적으로 분석</td>
+                        </tr>
+                        <tr>
+                            <tr>오류 예측 검사 = 데이터 확인 검사<br>(Error Guessing)</tr>
+                            <td>과거의 경험과 감각으로 예측 <br> 다른 블랙박스와 이루어져 보충적 검사기법</td>
+                        </tr>
+                        <tr>
+                            <th>비교 검사<br>(Comparsion Testing)</th>
+                            <td>다른 버전의 프로그램에 동일한 테스트 자료로 테스트</td>
+                        </tr>
+                    </table>
+                </li>
+            </ol>
+        </section>
+        <section>
+            <header>
+                <h2>개발 단계에 따른 애플리케이션 테스트</h2>
+                <ul>
+                    <li><img src="https://lh3.googleusercontent.com/proxy/CF3Ry-Vp-BJ82pMvfL2fG65pIMl6vha-KWSaKdYtKwM1YknJFX_dZZ3nWOqqmlHaI8AY-QvMrimORfvMIHqq95H8DhJkcHYse21m95qUwJ9ksu3SPcC-WDKhqz8xtU9Zt_C9jKhSoW0DA1lO0J-GRl7yK57XUS8Ccd5G_ynyaQ" alt=""></li>
+                    <li>개발단계에서부터 테스트를 수행 => 요구분석의 오류, 설계오류 등 발견</li>
+                    <li><span class="red">V-모델</span> : 애플리케이션 테스트와 소프트웨어 개발단계를 연결하여 표현한 것</li>
+                </ul>
+                <ol>
+                    <li>
+                        <h3>단위 테스트(Unit-Test)</h3>
+                        <ul>
+                            <li>설계의 최소 단위인 모듈이나 컴포넌트 중심 테스트</li>
+                            <li>인터페이스, 외부적 I/O,자료구조, 독립적 기초경로, 오류처리경로, 경계조건검사</li>
+                            <li>기능성 테스트 최우선</li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <th>구조기반 테스트</th>
+                                        <td>주로 사용 됨 <br>프로그램 구조 및 복잡도를 검증하는 화이트박스테스트 시행</td>
+                                        <td>제어흐름, 조건설정</td>
+                                    </tr>
+                                    <tr>
+                                        <th>명세기반 테스트</th>
+                                        <td>목적 및 실행코드 기반의 블랙박스 테스트 시행</td>
+                                        <td>동등 분할, 경계 값 분석</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>통합 테스트(Intergration Test)</h3>
+                        <ul>
+                            <li>단위테스트 완료 후 모듈 결합하는 과정에서의 테스트</li>
+                            <li>모듈 간 또는 통합된 컴포넌트간의 상호작용 오류 검사</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>시스템 테스트(System Test)</h3>
+                        <ul>
+                            <li>개발</li>
+                        </ul>
+                    </li>
+                </ol>
+            </header>
+
+        </section>
+    </div>
+    <script src="common.js"></script>
+
 </body>
 
 </html>
