@@ -284,7 +284,7 @@
             <header>
                 <h2>개발 단계에 따른 애플리케이션 테스트</h2>
                 <ul>
-                    <li><img src="https://lh3.googleusercontent.com/proxy/CF3Ry-Vp-BJ82pMvfL2fG65pIMl6vha-KWSaKdYtKwM1YknJFX_dZZ3nWOqqmlHaI8AY-QvMrimORfvMIHqq95H8DhJkcHYse21m95qUwJ9ksu3SPcC-WDKhqz8xtU9Zt_C9jKhSoW0DA1lO0J-GRl7yK57XUS8Ccd5G_ynyaQ" alt=""></li>
+                    <li><img src="https://lh3.googleusercontent.com/proxy/chECVphw4y8VF24GciqbJsCdQ20vNnVPmcZqex8LNaka-oyJyJzPWHeYzOrKb9dbPwzPPDEU43YmIDz1ZGw-EjdhZZA22ZsJL_5z7Lf9-gRo_PfbksVEeCPZ7xOAuf5q-sTzU3eBYfO_WHhKWO7sL_3tQ12wKiP8" alt=""></li>
                     <li>개발단계에서부터 테스트를 수행 => 요구분석의 오류, 설계오류 등 발견</li>
                     <li><span class="red">V-모델</span> : 애플리케이션 테스트와 소프트웨어 개발단계를 연결하여 표현한 것</li>
                 </ul>
@@ -316,12 +316,125 @@
                         <ul>
                             <li>단위테스트 완료 후 모듈 결합하는 과정에서의 테스트</li>
                             <li>모듈 간 또는 통합된 컴포넌트간의 상호작용 오류 검사</li>
+                            <li>
+                                <dl>
+                                    <dt>비점진적 통합방식</dt>
+                                    <dd>모듈이 미리 결합되어있는 프로그램 전체를 테스트</dd>
+                                    <dd>빅뱅통합테스트 방식</dd>
+                                    <dd>빅뱅통합테스트 방식</dd>
+                                </dl>
+                                <dl>
+                                    <dt>점진적 통합방식</dt>
+                                    <dd>하향식, 상향식, 혼합식 방식</dd>
+                                    <dd>오류수정 용이, 인터페이스와 관련된 오류를 완전히테스트할 가능성이 높음</dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <h4>하향식 통합 테스트(Top Down Intergration Test)</h4>
+                                <ul>
+                                    <li>상위에서 하위로 내려오며 통합하며 테스트</li>
+                                    <li>
+                                        <img src="https://t1.daumcdn.net/cfile/tistory/23062A3E591DC9C330" alt="">
+                                        <dl>
+                                            <dt>깊이우선 통합</dt>
+                                            <dd>주요제어모듈기준으로 종속된 모듈 통합</dd>
+                                            <dt>넓이 우선 통합</dt>
+                                            <dd>구조의 수평을 중심으로 해당하는 모듈 통합</dd>
+                                        </dl>
+
+                                    </li>
+                                    <li>테스트 초기부터 사용자에게 시스템 구조를 보여줄 수 있음</li>
+                                    <li>상위모듈에서는 테스트케이스 사용에 어려움</li>
+                                    <li><b>절차</b> 
+                                        <ol>
+                                            <li>주요 제어 모듈은 작성된 프로그램 사용, <br>주요 제어 모듈의 종속모듈은 스텁(Stub)으로 대체</li>
+                                            <li>통합방법을 따라 하위모듈인 스텁들이 한번에 하나씩 실제 모듈로 교체</li>
+                                            <li>모듈이 통합될 때마다 테스트 시행</li>
+                                            <li>새로운 오류가 발생하지 않음을 보증하기 위해 회귀테스트 진행</li>
+                                        </ol>
+                                    </li>
+                                </ul>
+                                <h4>상향식 통합 테스트(Bottom Up Intergration Test)</h4>
+                                <ol>
+                                    <li>하위 모듈을 클러스터로 통합</li>
+                                    <li>상위모듈에서 데이터의 입출력을 확인하기 위해 더미모듈인 드라이버를 작성</li>
+                                    <li>통합된 클러스터 단위로 테스트</li>
+                                    <li>테스트 완료 후 클러스터는 구조의 상위로 이동하여 결합, 드라이버는 실제 모듈로 대체</li>
+                                </ul>
+                                <h4>혼합식 통합 테스트</h4>
+                                <ul>
+                                    <li>하위에서는 상향식 통합, 상위에서는 하향식통합</li>
+                                    <li>샌드위치 통합테스트</li>
+                                </ul>
+                                <h4>회귀 테스팅(Regression Testing)</h4>
+                                <ul>
+                                    <li>이미 테스트 된 프로그램의 테스팅 반복</li>
+                                    <li>새로운 오류가 있는지 확인</li>
+                                    <li>수정한 모듈이나 컴포넌트가 다른부분에 영향을 미치는디, 오류가 생기는지 테스트</li>
+                                    <li>시간과 비용이 많이 듦으로 기존 테스트케이스중 변경된 부분만 테스트(그래도 모든케이스를 하는것이 좋다)</li>
+                                    <li>
+                                        케이스 선정방법
+                                        <ul>
+                                            <li></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </li>
                     <li>
                         <h3>시스템 테스트(System Test)</h3>
                         <ul>
-                            <li>개발</li>
+                            <li>개발된 소프트웨어가 시스템에서 수행되는가</li>
+                            <li>장애리스크를 최소화하기 위해서 실제 사용환경과 유사하게 만든다</li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <th>기능적 요구사항</th>
+                                        <td>요구사항 명세서, 비즈니스 절차 등 <b>블랙박스</b> 테스트 실행</td>
+                                    </tr>
+                                    <tr>
+                                        <th>비기능적요구사항</th>
+                                        <td>성능테스트, 내부시스템 구조 등 <b>화이트박스</b> 테스트 시행</td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>인수 테스트(Acception Test)</h3>
+                        <ul>
+                            <li>사용자의 요구사항을 충족하는지에 중점을 두고 테스트</li>
+                            <li>사용자가 직접 테스트</li>
+                            <li>문제없을 시 사용자는 소프트웨어 인수 => 프로젝트 종료</li>
+                            <li>
+                                <table>
+                                    <tr>
+                                        <th>사용자 인수 테스트</th>
+                                        <td>사용자가 시스템 사용의 적절성 여부 확인</td>
+                                    </tr>
+                                    <tr>
+                                        <th>운영상의 인수 테스트</th>
+                                        <td>시스템관리자가 시스템 인수시 수행, <br>백업,재난복구,정기점검 등 확인</td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약 인수 테스트</th>
+                                        <td>계약상의 인수/검수 조건을 준수하는지 여부 확인</td>
+                                    </tr>
+                                    <tr>
+                                        <th>규정 인수 테스트</th>
+                                        <td>정부지침, 법구 등 규정에 맞게 개발되었는지 확인</td>
+                                    </tr>
+                                    <tr>
+                                        <th>알파 테스트</th>
+                                        <td>개발자 앞에서 행하는 테스트 <br>통제된 환경에서 실시<br> 오류등의 문제를 개발자와 사용자가 확인하며 기록</td>
+                                    </tr>
+                                    <tr>
+                                        <th>베타 테스트</th>
+                                        <td>선정된 최종 사용자가 여러명 앞에서 <br>개발자에 의해 제어되지 않은 상태에서 테스트 실행 <br>오류와 사용상의 문제를 개발자에게 주기적으로 보고</td>
+                                    </tr>
+                                </table>
+                            </li>
                         </ul>
                     </li>
                 </ol>
